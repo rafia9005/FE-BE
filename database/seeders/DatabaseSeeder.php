@@ -19,5 +19,12 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
             'bio' => 'Hallo, Saya adalah seorang Full-Stack Developer dan juga DevOps'
         ]);
+        User::create([
+            'name' => 'Ahmad Rafi',
+            'username' => 'user',
+            'password' => bcrypt('user123'),
+            'role' => 'admin',
+            'bio' => 'Hallo, Saya adalah seorang Full-Stack Developer dan juga DevOps'
+        ]);
     }
 }

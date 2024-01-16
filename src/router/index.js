@@ -10,6 +10,9 @@ import PlaceDetail from "../views/detail/PlaceDetail.vue";
 import NotFound from "../views/errors/404.vue";
 import PlaceAdd from "../views/add/PlaceAdd.vue";
 import ProfileView from "../views/ProfileView.vue";
+import ScheduleAdd from '../views/add/ScheduleAdd.vue'
+import ScheduleDetail from '../views/detail/ScheduleDetail.vue'
+import ScheduleEdit from '../views/edit/ScheduleEdit.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -63,6 +66,21 @@ const router = createRouter({
             path: "/place/add",
             name: "Tambah terminal",
             component: PlaceAdd,
+        },
+        {
+            path: "/schedule/add",
+            name: "Tambah jadwal",
+            component: ScheduleAdd
+        },
+        {
+            path: '/schedule/:id/detail',
+            name: 'Detail Jadwal',
+            component: ScheduleDetail
+        },
+        {
+            path: '/schedule/:id/edit',
+            name: 'Edit Jadwal',
+            component: ScheduleEdit
         },
         {
             path: "/profile",

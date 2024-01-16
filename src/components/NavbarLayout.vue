@@ -1,7 +1,10 @@
 <template>
-    <nav class="flex justify-evenly items-center bg-blue-400 text-white py-2 fixed w-[100%]">
+<nav style="z-index: 2;" class="fixed flex justify-evenly items-center text-white py-5 fixed w-[100%] backdrop-blur-lg bg-opacity-30" :initial="{ y:-100 }" :enter="{ y:0 }" :on-durationchange="900">
         <div class="flex gap-[40px] items-center">
-            <h1 class="font-bold text-3xl">Laravel Api</h1>
+            <div class="flex items-center gap-[10px]">
+                <i class="fa-solid fa-bus text-[30px]"></i>
+                <h1 class="font-bold text-3xl">Terminal Bus</h1>
+            </div>
             <ul class="flex gap-[10px]">
                 <li><router-link to="">Home</router-link></li>
                 <li><router-link to="">About</router-link></li>

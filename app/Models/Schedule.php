@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
+    protected $table = 'schedules';
+    protected $fillable = [
+        'bus',
+        'line',
+        'kelas',
+        'from',
+        'to',
+        'berangkat',
+        'jarak',
+        'speed'
+    ];
 }

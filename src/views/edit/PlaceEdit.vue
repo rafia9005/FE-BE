@@ -194,7 +194,7 @@ export default {
                         },
                     }
                 );
-                this.successMessage = "Place updated successfully!";
+                this.successMessage = "Schedule updated successfully!";
                 setTimeout(() => {
                     this.$router.push("/dashboard");
                 }, 2000);

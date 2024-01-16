@@ -92,6 +92,11 @@ export default {
             validation: {},
         };
     },
+    async created() {
+        if (localStorage.getItem("token")) {
+            this.$router.push("/dashboard");
+        }
+    },
     methods: {
         async loginHandler() {
             const bodyData = new FormData();
@@ -100,10 +105,22 @@ export default {
             try {
                 const loginResponse = await axios.post(
                     "http://localhost:8000/v1/auth/login",
-                    bodyData,
+                    bodyData
                 );
                 const token = loginResponse.data.access_token;
                 localStorage.setItem("token", token);
+                const roleCheck = await axios.get(
+                    "http://localhost:8000/v1/profile",
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem(
+                                "token"
+                            )}`,
+                        },
+                    }
+                );
+                const role = roleCheck.data.role;
+                localStorage.setItem("role", role);
                 this.$router.push("/dashboard");
             } catch (error) {
                 this.validation = error.response.data;

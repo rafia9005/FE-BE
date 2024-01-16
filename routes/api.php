@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,9 +27,18 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('/{id}', [PlaceController::class, 'show']);
         Route::put('/{id}', [PlaceController::class, 'update']);
     });
+    Route::prefix('schedule')->group(function () {
+        Route::post('/', [ScheduleController::class, 'create']);
+        Route::delete('/{id}', [ScheduleController::class, 'delete']);
+        Route::get('/{id}', [ScheduleController::class, 'show']);
+        Route::put('/{id}', [ScheduleController::class, 'update']);
+    });
     Route::middleware('admin')->group(function () {
         Route::get('/admin', function (Request $request) {
             return response()->json(['message' => 'Halaman admin']);
         });
     });
+});
+Route::prefix('schedule')->group(function () {
+    Route::get('/', [ScheduleController::class, 'index']);
 });
