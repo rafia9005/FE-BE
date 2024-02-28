@@ -11,6 +11,7 @@ npm install
 ```bash
 php artisan key:generate
 php artisan migrate:fresh
+php artisan storage:link
 php artisan serve
 ```
 right now back end app is running in port 8000
