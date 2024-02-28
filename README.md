@@ -1,29 +1,21 @@
-# vue
+## HOW TO INSTALL?
 
-This template should help get you started developing with Vue 3 in Vite.
+1. clone this repository and open the folder
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+composer install
+```
+```bash
 npm install
 ```
+```bash
+php artisan key:generate
+php artisan migrate:fresh
+php artisan serve
+```
+right now back end app is running in port 8000
 
-### Compile and Hot-Reload for Development
-
-```sh
+```bash
 npm run dev
 ```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+right now front end app is running in port 5173
